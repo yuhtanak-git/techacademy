@@ -1,0 +1,39 @@
+repos:
+  - repo: local
+    hooks:
+      # Python: black
+      - id: black
+        name: black (Python)
+        entry: black
+        language: system
+        types: [python]
+        files: ^09_flask/.*\.py$
+
+      # Python: ruff (auto-fix)
+      - id: ruff
+        name: ruff (Python, auto-fix)
+        entry: ruff check --fix
+        language: system
+        types: [python]
+        files: ^09_flask/.*\.py$
+
+      # Web: prettier (HTML/CSS/JS/JSON/MD)
+      - id: prettier
+        name: prettier (Web)
+        entry: npx prettier --write
+        language: system
+        files: \.(html|css|js|json|md|yml|yaml)$
+
+      # JS: eslint (auto-fix)
+      - id: eslint
+        name: eslint (JS, auto-fix)
+        entry: npx eslint --fix
+        language: system
+        files: \.js$
+
+      # CSS: stylelint (auto-fix)
+      - id: stylelint
+        name: stylelint (CSS, auto-fix)
+        entry: npx stylelint --fix
+        language: system
+        files: \.css$

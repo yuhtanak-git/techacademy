@@ -1,0 +1,68 @@
+# =====================================================
+# Python
+# =====================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# =====================================================
+# Flask
+# =====================================================
+
+instance/
+*.sqlite3
+*.db
+todos.txt
+
+# =====================================================
+# Node / Frontend
+# =====================================================
+
+node_modules/
+dist/
+build/
+coverage/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# =====================================================
+# Lint / Formatter Cache
+# =====================================================
+
+.eslintcache
+.stylelintcache
+.prettier-cache
+
+# =====================================================
+# IDE / Editor
+# =====================================================
+
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ==============================================

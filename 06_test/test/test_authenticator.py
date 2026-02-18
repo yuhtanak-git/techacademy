@@ -46,6 +46,6 @@ def test_login_wrong_password(auth):
     """
     auth.register("user1", "pass1")
     with pytest.raises(
-            ValueError, match="エラー: ユーザー名またはパスワードが正しくありません。"
+        ValueError, match="エラー: ユーザー名またはパスワードが正しくありません。"
     ):
         auth.login("wrongpass", "wrongpass")

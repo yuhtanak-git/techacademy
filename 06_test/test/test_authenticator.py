@@ -1,5 +1,5 @@
 """
-Authenticator クラスの単体テスト
+Authenticatorクラスの単体テスト
 """
 
 import pytest
@@ -16,7 +16,7 @@ def auth():
 
 def test_register_success(auth):
     """
-    メソッドでユーザーが正しく登録されることを確認する。
+    registerメソッドでユーザーが正しく登録されるかを確認する。
     """
     auth.register("user1", "pass1")
     assert auth.users["user1"] == "pass1"
@@ -24,7 +24,7 @@ def test_register_success(auth):
 
 def test_register_duplicate_user(auth):
     """
-    既に存在するユーザー名で登録を試みた場合、ValueErrorが発生することの確認。
+    registerメソッドですでに存在するユーザー名で登録を試みた場合に、ValueError が発生することを確認する。
     """
     auth.register("user1", "pass1")
     with pytest.raises(ValueError, match="エラー: ユーザーは既に存在します。"):
@@ -33,7 +33,7 @@ def test_register_duplicate_user(auth):
 
 def test_login_success(auth):
     """
-    正しいユーザー名とパスワードでログインできることの確認。
+    loginメソッドで正しいユーザー名とパスワードでログインできるかを確認する。
     """
     auth.register("user1", "pass1")
     result = auth.login("user1", "pass1")
@@ -42,10 +42,10 @@ def test_login_success(auth):
 
 def test_login_wrong_password(auth):
     """
-    誤ったパスワードでログインした場合、ValueErrorが発生することの確認。
+    loginメソッドで誤ったパスワードでログインした場合に、ValueError が発生することを確認する。
     """
     auth.register("user1", "pass1")
     with pytest.raises(
-        ValueError, match="エラー: ユーザー名またはパスワードが正しくありません。"
+            ValueError, match="エラー: ユーザー名またはパスワードが正しくありません。"
     ):
         auth.login("wrongpass", "wrongpass")

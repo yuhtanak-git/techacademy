@@ -7,17 +7,27 @@ __pycache__/
 *.pyo
 *.pyd
 *.log
+*.coverage
+.coverage.*
+htmlcov/
 
 # Virtual environments
 .venv/
 venv/
 env/
 
+# =====================================================
 # Environment variables
+# =====================================================
+
 .env
 .env.*
+!.env.example   # ← これが重要（雛形は管理する）
 
-# Caches
+# =====================================================
+# Python Caches / Tools
+# =====================================================
+
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -30,6 +40,8 @@ env/
 instance/
 *.sqlite3
 *.db
+
+# 学習用のローカルファイル
 todos.txt
 
 # =====================================================
@@ -65,4 +77,5 @@ pnpm-lock.yaml
 *.ipr
 out/
 
-# ==============================================
+# macOS
+.DS_Store

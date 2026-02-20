@@ -2,3 +2,4 @@ openai>=2,<3
 python-dotenv>=1,<2
 Flask>=3,<4
 tiktoken>=0.7,<1
+tavily-python>=0.3,<1

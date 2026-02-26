@@ -5,7 +5,7 @@ config.py
 """
 import os
 
-# LLM / Embeddings
+# LLMなど
 MODEL_NAME = "gpt-4o-mini"
 EMBEDDING_MODEL = "text-embedding-3-small"
 

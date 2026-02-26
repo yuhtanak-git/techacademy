@@ -106,7 +106,7 @@ def compute_wind_risk(
     else:
         level = "低"
 
-    # 理由は多すぎると読みにくいので最大4つに制限
+    # 理由は最大4つに制限
     reasons = reasons[:4]
 
     return RiskResult(score=score, level=level, reasons=reasons)

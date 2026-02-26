@@ -48,7 +48,6 @@ def build_user_message(form) -> str:
     if free_text:
         lines.append(f"追加メモ: {free_text}")
 
-    # LLMがやるべきこと（評価→対策）を明示
     lines.append("依頼: 風害による転倒リスクを評価し、対策を提案して。必要ならWeb検索とマニュアル検索を使って。")
     return "\n".join(lines)
 
@@ -65,7 +64,6 @@ def index():
     出力値:
       - HTMLレスポンス
     """
-    # セッションごとにthread_idを持つ（会話履歴の切り分け用）
     if "thread_id" not in session:
         session["thread_id"] = str(uuid.uuid4())
 
@@ -106,8 +104,6 @@ def clear():
     """
     session.pop("thread_id", None)
 
-    # MemorySaverは共有ストレージのため、本来はthread_id単位消去が理想。
-    # 課題提出規模では簡単に全消去。
     memory.storage.clear()
 
     return make_response(render_template(
@@ -119,5 +115,4 @@ def clear():
 
 
 if __name__ == "__main__":
-    # デバッグ起動
     app.run(debug=True)

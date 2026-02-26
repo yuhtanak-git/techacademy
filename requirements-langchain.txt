@@ -11,6 +11,9 @@ langchain-openai>=0.1,<0.2
 langchain-text-splitters>=0.2,<0.3
 langchain-chroma==0.1.4
 
+# PDF loader 用
+pypdf>=4,<5
+
 # LangGraph
 langgraph>=0.2,<0.3
 

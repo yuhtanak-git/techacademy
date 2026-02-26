@@ -1,0 +1,27 @@
+# Flask
+Flask>=3,<4
+python-dotenv>=1,<2
+
+# OpenAI (LangChain互換)
+openai>=1.40,<2
+
+# LangChain
+langchain-core>=0.2,<0.3
+langchain-community>=0.2,<0.3
+langchain-openai>=0.1,<0.2
+langchain-text-splitters>=0.2,<0.3
+
+# LangGraph
+langgraph>=0.2,<0.3
+
+# RAG
+langchain-chroma==0.1.4
+chromadb>=0.5,<0.6
+pypdf>=4,<5
+
+# Tools
+tiktoken>=0.7,<1
+tavily-python>=0.3,<1
+
+# Test
+pytest>=8,<9

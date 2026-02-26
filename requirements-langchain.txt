@@ -1,0 +1,19 @@
+openai>=1.40,<2
+
+python-dotenv>=1,<2
+tiktoken>=0.7,<1
+tavily-python>=0.3,<1
+
+# LangChain一式（教材の import に必要）
+langchain-core>=0.2,<0.3
+langchain-community>=0.2,<0.3
+langchain-openai>=0.1,<0.2
+langchain-text-splitters>=0.2,<0.3
+langchain-chroma==0.1.4
+
+# LangGraph
+langgraph>=0.2,<0.3
+
+# Jupyterで.ipynb動かす前提
+ipykernel>=7,<8
+ipython>=9,<10

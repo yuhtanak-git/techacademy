@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="chat-box" id="chat-box">
+  {% for message in messages %}
+  <div class="{{ message.class }}">
+    {{ message.text|safe }}
+  </div>
+  {% endfor %}
+</div>
+
+<form method="POST" action="/" id="chat-form">
+  <div class="form-grid">
+    <label>
+      都道府県
+      <select name="prefecture" required>
+        <option value="" selected disabled>選択してください</option>
+        {% for p in prefectures %}
+        <option value="{{ p }}">{{ p }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label>
+      駐車環境
+      <select name="parking_type" required>
+        <option value="" selected disabled>選択してください</option>
+        {% for v, label in parking_types %}
+        <option value="{{ v }}">{{ label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="has_cover">
+      カバーあり
+    </label>
+
+    <label class="check">
+      <input type="checkbox" name="has_bike_fixing_gear">
+      バイクの固定具あり
+    </label>
+
+    <label class="full">
+      追加メモ（任意）
+      <textarea name="free_text" id="user-input" placeholder="例：明日ツーリングで日中不在。地面が柔らかい。など" autofocus></textarea>
+      <small>Ctrl+Enterで送信できます</small>
+    </label>
+  </div>
+
+  <div class="input-box">
+    <button type="submit" id="submit-button">診断する</button>
+  </div>
+</form>
+
+<form method="POST" action="/clear">
+  <button type="submit" class="clear-button">履歴を消去</button>
+</form>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock %}
